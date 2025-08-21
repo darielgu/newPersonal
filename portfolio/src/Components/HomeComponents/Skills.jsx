@@ -6,17 +6,17 @@ const Skills = () => {
   const skills = [
     {
       name: "JavaScript",
-      level: "Advanced",
+      level: "Web Dev",
       img: "https://www.citypng.com/public/uploads/preview/js-javascript-round-logo-icon-png-7017516947717339mnyf7eumy.png?v=2025071900",
     },
     {
       name: "React",
-      level: "Advanced",
+      level: "Frontend",
       img: "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg",
     },
     {
       name: "Node.js",
-      level: "Advanced",
+      level: "Backend",
       img: "https://camo.githubusercontent.com/e7dfd791db06e9a2c2541f4241c3fba40c6137ba887e2fc3ce508dc3275a0382/68747470733a2f2f7261772e6769746875622e636f6d2f436972636c6543492d5075626c69632f63696d672d6e6f64652f6d61696e2f696d672f636972636c652d6e6f64656a732e7376673f73616e6974697a653d74727565",
     },
     {
@@ -38,6 +38,11 @@ const Skills = () => {
       name: "C++",
       level: "Object Oriented Programming",
       img: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
+    },
+    {
+      name: "Express",
+      level: "Backend",
+      img: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
     },
   ];
 

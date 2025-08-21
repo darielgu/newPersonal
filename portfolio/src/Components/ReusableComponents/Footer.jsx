@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Right Section - All Rights Reserved */}
         <Box textAlign={{ xs: "center", md: "right" }}>
           <Typography variant="subtitle2" color="white" gutterBottom>
-            All Rights Reserved &copy; {currentYear}
+            Dariel Gutierrez &copy; {currentYear}
           </Typography>
         </Box>
       </Stack>
