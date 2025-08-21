@@ -14,14 +14,16 @@ export const createPost = async (req, res) => {
         title,
         content,
         // connect is how we relate the post to the user
-        user: {
+        author: {
           connect: { id: process.env.USER_ID },
         },
       },
     });
     res.status(201).json(newPost);
   } catch (error) {
-    res.status(500).json({ error: "Failed to create post" });
+    res
+      .status(500)
+      .json({ error: "Failed to create post", details: error.message });
   }
 };
 
