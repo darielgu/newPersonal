@@ -4,3 +4,11 @@ body {
   padding: 0;
   background-color: black; /* changes the bounce color */
 }
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

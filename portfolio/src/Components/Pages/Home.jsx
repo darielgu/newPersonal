@@ -7,7 +7,10 @@ import Experience from "../HomeComponents/Experience";
 import Skills from "../HomeComponents/Skills";
 import Entries from "../HomeComponents/Entries";
 import Footer from "../ReusableComponents/Footer";
+import Header from "../ReusableComponents/Header";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -18,45 +21,16 @@ const Home = () => {
         m: 0,
         display: "flex",
         flexDirection: "column",
+        "::webkit-scrollbar": {
+          display: "none",
+          width: 0,
+        },
       }}
     >
       {/* Header Component */}
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Stack
-          direction={"row"}
-          sx={{
-            bgcolor: "#2e2e2e",
-            width: "20%",
-            height: "45px",
-            borderRadius: 5,
-            justifyContent: "space-evenly",
-            textAlign: "center",
-            mt: 2,
-            minWidth: "fit-content",
-            gap: 1,
-            border: "1px solid #5b5c5b",
-          }}
-        >
-          <Typography sx={{ mt: 1, cursor: "pointer" }} color="white">
-            Home
-          </Typography>
+      <Header />
 
-          <Typography sx={{ mt: 1, cursor: "pointer" }} color="white">
-            Dev Journal
-          </Typography>
-
-          <Typography sx={{ mt: 1, cursor: "pointer" }} color="white">
-            Projects
-          </Typography>
-        </Stack>
-      </Box>
+      {/* Hero Section */}
       {/* Main Content */}
       <Container>
         <Box
@@ -64,7 +38,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            width: "65%",
+            width: "100%",
             mt: 10,
             mb: 10,
           }}
@@ -87,28 +61,46 @@ const Home = () => {
               alt=""
             />
           </Box>
-          <Typography variant="h2" sx={{ color: "white" }}>
-            Welcome to My Portfolio
-          </Typography>
-          <Typography sx={{ color: "white", mt: 2 }}>
-            Hello! My name is Dariel Gutierrez, I am a computer science student
-            @ San Diego State University
-          </Typography>
-          <Typography sx={{ color: "white", mb: 2 }}>
-            I am passionate about software development and love to create
-            innovative solutions. Here you can find my projects, journal, and
-            more about me.
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
-            <Button sx={{ color: "white" }} href="https://github.com/darielgu">
-              <GitHubIcon />
-            </Button>
-            <Button
-              sx={{ color: "white" }}
-              href="https://www.linkedin.com/in/dariel-gutierrez/"
+          <Box sx={{ flexDirection: "row", display: "flex" }}>
+            <Box
+              sx={{ display: "flex", flexDirection: "column", width: "70%" }}
             >
-              <LinkedInIcon />
-            </Button>
+              <Typography variant="h2" sx={{ color: "white" }}>
+                Welcome to My Portfolio
+              </Typography>
+              <Typography sx={{ color: "white", mt: 2, fontSize: "1.2rem" }}>
+                Hello! My name is Dariel Gutierrez, I am a computer science
+                student @ San Diego State University I am passionate about
+                software development and love to create innovative solutions.
+                Here you can find my projects, journal, and more about me.
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row" }}>
+                <Button
+                  sx={{ color: "white" }}
+                  href="https://github.com/darielgu"
+                >
+                  <GitHubIcon />
+                </Button>
+                <Button
+                  sx={{ color: "white" }}
+                  href="https://www.linkedin.com/in/dariel-gutierrez/"
+                >
+                  <LinkedInIcon />
+                </Button>
+              </Box>
+            </Box>
+            <Box sx={{ width: "30%" }}>
+              <img
+                src="https://media.licdn.com/dms/image/v2/D5622AQGTRxw7Oi0PJg/feedshare-shrink_1280/B56ZimEGz5H0Ao-/0/1755132765223?e=1758758400&v=beta&t=6l1SLnRo1tvWz1jZTS5BWta81e89UoomYPnFYRxcpJ4"
+                alt="Kody"
+                style={{
+                  width: "100%",
+                  borderRadius: "8px",
+                  height: "450px",
+                  border: "1px solid #ccc",
+                }}
+              />
+            </Box>
           </Box>
         </Box>
 

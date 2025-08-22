@@ -1,20 +1,34 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Entries = () => {
-  let entries = [
-    { name: "Entry 1", date: "2023-01-01", content: "My first entry" },
-    {
-      name: "Entry 2",
-      date: "2023-01-02",
-      content: "Another day, another entry",
-    },
-  ];
+  const [entries, setEntries] = useState([]);
+
+  useEffect(() => {
+    const fetchEntries = async () => {
+      try {
+        const response = await axios.get(
+          import.meta.env.VITE_API_URL + "posts/"
+        );
+        setEntries(response.data);
+      } catch (error) {
+        console.error("Error fetching entries:", error);
+      }
+    };
+    fetchEntries();
+  }, []);
+
   return (
     <Box>
       {entries.map((entry, index) => (
         <Box
           key={index}
+          onClick={() => {
+            // Handle click event
+            // Redirect to a detailed view of the entry
+          }}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -29,12 +43,16 @@ const Entries = () => {
           }}
         >
           <Typography variant="body1" color="text.secondary">
-            {entry.date}
+            {entry.createdAt.toString().split("T")[0]}
           </Typography>
           <Typography variant="h6" color="text.primary">
-            {entry.name}
+            {entry.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ whiteSpace: "pre-line" }}
+          >
             {entry.content}
           </Typography>
           <Typography variant="body2" color="green">
