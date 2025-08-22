@@ -74,7 +74,7 @@ const Home = () => {
                 software development and love to create innovative solutions.
                 Here you can find my projects, journal, and more about me.
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "row" }}>
+              <Box sx={{ display: "flex", flexDirection: "row", mt: 2 }}>
                 <Button
                   sx={{ color: "white" }}
                   href="https://github.com/darielgu"
