@@ -1,5 +1,5 @@
 import { Container, Box, Typography } from "@mui/material";
-import Entries from "../HomeComponents/Entries";
+import Journals from "../DevJournalComponents/Journals";
 import React from "react";
 import Header from "../ReusableComponents/Header";
 
@@ -18,15 +18,13 @@ const DevJournal = () => {
     >
       <Header />
       <Container>
-        <Box>
-          <Typography variant="h4">Developer Journal</Typography>
-          <Typography variant="body1">
-            Welcome to the developer journal! Here you can find all the latest
-            updates and entries.
+        <Box sx={{ width: "60%", m: 3, fontWeight: "bold", ml: 0 }}>
+          <Typography variant="h3" sx={{ mt: 3 }}>
+            Deep dives into what I've worked on, learned, and built.
           </Typography>
         </Box>
         <Box>
-          <Entries />
+          <Journals />
         </Box>
       </Container>
     </Box>

@@ -1,9 +1,8 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-const Entries = () => {
+const Journals = () => {
   const [entries, setEntries] = useState([]);
 
   useEffect(() => {
@@ -22,46 +21,53 @@ const Entries = () => {
 
   return (
     <Box>
-      {entries.map((entry, index) => (
+      {entries.map((entry) => (
         <Box
-          key={index}
+          key={entry.id}
           onClick={() => {
             // Handle click event
             // Redirect to a detailed view of the entry
           }}
           sx={{
             display: "flex",
-            flexDirection: "column",
-            marginBottom: 2,
+            flexDirection: "row",
+            alignItems: "flex-start",
             "&:hover": {
               bgcolor: "#1e1e1e",
               cursor: "pointer",
             },
-            width: "80%",
+            width: "100%",
             p: 2,
-            borderRadius: 6,
+            borderBottom: "1px solid gray",
+            mb: 1,
           }}
         >
-          <Typography variant="body1" color="text.secondary">
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ minWidth: 120, mr: 3 }}
+          >
             {entry.createdAt.toString().split("T")[0]}
           </Typography>
-          <Typography variant="h6" color="text.primary">
-            {entry.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ whiteSpace: "pre-line" }}
-          >
-            {entry.content.slice(0, 41)}
-          </Typography>
-          <Typography variant="body2" color="#349beb">
-            Click to read
-          </Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
+            <Typography variant="h6" color="text.primary">
+              {entry.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ whiteSpace: "pre-line" }}
+            >
+              {entry.content}
+            </Typography>
+            <Typography variant="body2" color="#349beb">
+              Click to read
+            </Typography>
+          </Box>
         </Box>
       ))}
     </Box>
   );
 };
 
-export default Entries;
+export default Journals;

@@ -9,8 +9,11 @@ import Entries from "../HomeComponents/Entries";
 import Footer from "../ReusableComponents/Footer";
 import Header from "../ReusableComponents/Header";
 import { useNavigate } from "react-router-dom";
+import { motion, useScroll } from "motion/react";
 const Home = () => {
   const navigate = useNavigate();
+  const { scrollYProgress } = useScroll();
+
   return (
     <Box
       sx={{
@@ -27,6 +30,19 @@ const Home = () => {
         },
       }}
     >
+      <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX: scrollYProgress,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 10,
+          originX: 0,
+          backgroundColor: "#349ceb81",
+        }}
+      />
       {/* Header Component */}
       <Header />
 
@@ -50,16 +66,21 @@ const Home = () => {
               alignItems: "flex-start",
             }}
           >
-            <img
-              style={{
-                borderRadius: "50%",
-                // marginLeft: "10px",
-                height: "70px",
-                width: "70px",
-              }}
-              src="https://media.licdn.com/dms/image/v2/D5603AQFq17E8o7NgpA/profile-displayphoto-scale_400_400/B56ZeD3mXeHQAg-/0/1750264086049?e=1757548800&v=beta&t=TyFlBLlu66m0oIhV1DjWJRxJ_OfddQ5fYSM-s5PgA7M"
-              alt=""
-            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+            >
+              <img
+                style={{
+                  borderRadius: "50%",
+                  // marginLeft: "10px",
+                  height: "70px",
+                  width: "70px",
+                }}
+                src="https://media.licdn.com/dms/image/v2/D5603AQFq17E8o7NgpA/profile-displayphoto-scale_400_400/B56ZeD3mXeHQAg-/0/1750264086049?e=1757548800&v=beta&t=TyFlBLlu66m0oIhV1DjWJRxJ_OfddQ5fYSM-s5PgA7M"
+                alt=""
+              />
+            </motion.div>
           </Box>
           <Box sx={{ flexDirection: "row", display: "flex" }}>
             <Box
@@ -90,16 +111,21 @@ const Home = () => {
               </Box>
             </Box>
             <Box sx={{ width: "30%" }}>
-              <img
-                src="https://media.licdn.com/dms/image/v2/D5622AQGTRxw7Oi0PJg/feedshare-shrink_1280/B56ZimEGz5H0Ao-/0/1755132765223?e=1758758400&v=beta&t=6l1SLnRo1tvWz1jZTS5BWta81e89UoomYPnFYRxcpJ4"
-                alt="Kody"
-                style={{
-                  width: "100%",
-                  borderRadius: "8px",
-                  height: "450px",
-                  border: "1px solid #ccc",
-                }}
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D5622AQGTRxw7Oi0PJg/feedshare-shrink_1280/B56ZimEGz5H0Ao-/0/1755132765223?e=1758758400&v=beta&t=6l1SLnRo1tvWz1jZTS5BWta81e89UoomYPnFYRxcpJ4"
+                  alt="Kody"
+                  style={{
+                    width: "100%",
+                    borderRadius: "8px",
+                    height: "450px",
+                    border: "1px solid #ccc",
+                  }}
+                />
+              </motion.div>
             </Box>
           </Box>
         </Box>
@@ -107,6 +133,7 @@ const Home = () => {
         <Box sx={{ flexDirection: "column", width: "100%", mt: 10, mb: 10 }}>
           {/* <AboutMe /> */}
         </Box>
+        {/* <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}> */}
         <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
           <Box
             sx={{
@@ -134,6 +161,7 @@ const Home = () => {
             <Skills />
           </Box>
         </Box>
+        {/* </motion.div> */}
         <Footer />
       </Container>
     </Box>
