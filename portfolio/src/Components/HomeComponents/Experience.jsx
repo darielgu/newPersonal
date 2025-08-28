@@ -102,6 +102,7 @@ const Experience = () => {
                 variant="body1"
                 color="text.secondary"
                 sx={{ marginBottom: 0.5, gap: 1 }}
+                className="hidden"
               >
                 {exp.duration}
               </Typography>
