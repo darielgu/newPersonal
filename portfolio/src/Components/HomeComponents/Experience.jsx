@@ -1,6 +1,7 @@
 import { Card, Typography, Box, Avatar, Button } from "@mui/material";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import React from "react";
+import res from "../../public/resume.png";
 
 const Experience = () => {
   const experiences = [
@@ -109,7 +110,12 @@ const Experience = () => {
             </Box>
           </Box>
         ))}
-        <Button variant="outlined" color="primary" sx={{ mt: 2 }}>
+        <Button
+          variant="outlined"
+          color="primary"
+          sx={{ mt: 2 }}
+          onClick={() => window.open(res, "_blank")}
+        >
           View Resume
         </Button>
       </Box>

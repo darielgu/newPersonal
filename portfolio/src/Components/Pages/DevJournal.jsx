@@ -21,7 +21,7 @@ const DevJournal = () => {
       <Container>
         <Box sx={{ width: "60%", m: 3, fontWeight: "bold", ml: 0 }}>
           <Typography variant="h3" sx={{ mt: 6 }}>
-            Journals on my programming
+            Deep dives into what I've worked on, learned, and built
           </Typography>
         </Box>
         <Box>

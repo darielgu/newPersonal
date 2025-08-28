@@ -20,7 +20,7 @@ const Projects = () => {
       <Header />
       <Container maxWidth="lg">
         <Typography variant="h3" sx={{ mt: 6, width: "60%", mb: 5 }}>
-          Deep dives into what I've worked on, learned, and built
+          Some projects I've done in my free time
         </Typography>
         <Container
           maxWidth="md"
