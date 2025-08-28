@@ -7,21 +7,21 @@ const Experience = () => {
     {
       position: "SWE Intern",
       company: "Salesforce",
-      duration: "June 2025 - August 2025",
+      duration: "Jun 2025 - Aug 2025",
       description: "Software Engineering Intern",
       logo: "https://logo.clearbit.com/salesforce.com", // Using Clearbit for company logos
     },
     {
       position: "Computer Science Tutor",
       company: "San Diego State University",
-      duration: "2025 - Present",
+      duration: "Aug 2025 - Present",
       description: "Tutoring students in computer science concepts",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0kGd1e6cXlha60Ks5ZEWHqvVNthufO-xhQ&s", // Using Clearbit for university logos
     },
     {
       position: "Research Assistant",
       company: "San Diego State University",
-      duration: "2024 - Present",
+      duration: "Febuary 2025 - Jun 2025",
       description: "Assisting in research projects related to computer science",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0kGd1e6cXlha60Ks5ZEWHqvVNthufO-xhQ&s", // Using Clearbit
     },
