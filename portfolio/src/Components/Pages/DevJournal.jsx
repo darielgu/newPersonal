@@ -1,4 +1,4 @@
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, Modal } from "@mui/material";
 import Journals from "../DevJournalComponents/Journals";
 import React from "react";
 import Header from "../ReusableComponents/Header";
@@ -20,15 +20,15 @@ const DevJournal = () => {
       <Header />
       <Container>
         <Box sx={{ width: "60%", m: 3, fontWeight: "bold", ml: 0 }}>
-          <Typography variant="h3" sx={{ mt: 3 }}>
-            Deep dives into what I've worked on, learned, and built
-            <NoteAltIcon sx={{ fontSize: "35px", ml: 1, mt: 0.5 }} />
+          <Typography variant="h3" sx={{ mt: 6 }}>
+            Journals on my programming
           </Typography>
         </Box>
         <Box>
           <Journals />
         </Box>
       </Container>
+      {/* <Modal /> */}
     </Box>
   );
 };

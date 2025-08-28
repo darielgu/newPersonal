@@ -19,7 +19,7 @@ const Projects = () => {
     <Box sx={{ bgcolor: "#000000ff", minHeight: "100vh" }}>
       <Header />
       <Container maxWidth="lg">
-        <Typography variant="h3" sx={{ mt: 3, width: "60%", mb: 5 }}>
+        <Typography variant="h3" sx={{ mt: 6, width: "60%", mb: 5 }}>
           Deep dives into what I've worked on, learned, and built
         </Typography>
         <Container

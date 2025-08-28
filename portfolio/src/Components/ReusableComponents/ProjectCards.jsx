@@ -12,7 +12,7 @@ import React from "react";
 
 const ProjectCards = ({ title, content, date, path, website, tags }) => {
   return (
-    <Card sx={{ height: "660px", width: "400px" }}>
+    <Card sx={{ height: "650px", width: "400px" }}>
       <CardMedia
         image={path}
         alt={title}
@@ -23,7 +23,7 @@ const ProjectCards = ({ title, content, date, path, website, tags }) => {
           {title}
         </Typography>
         <Typography>{content}</Typography>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 1, mt: 1 }}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
           {tags.map((tag) => (
             <Box
               key={tag}
@@ -31,7 +31,6 @@ const ProjectCards = ({ title, content, date, path, website, tags }) => {
                 bgcolor: "#f5f5f5",
                 color: "#333",
                 px: 1.5,
-                py: 0.5,
                 borderRadius: 2,
                 fontSize: "0.95rem",
                 fontWeight: 500,
