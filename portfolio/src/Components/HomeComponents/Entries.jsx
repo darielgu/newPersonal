@@ -2,10 +2,11 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Entries = () => {
   const [entries, setEntries] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchEntries = async () => {
       try {
@@ -28,6 +29,7 @@ const Entries = () => {
           onClick={() => {
             // Handle click event
             // Redirect to a detailed view of the entry
+            navigate("/dev-journal");
           }}
           sx={{
             display: "flex",
