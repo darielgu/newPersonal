@@ -29,6 +29,7 @@ const Header = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        position: { xs: "sticky", md: "static" },
       }}
     >
       <Stack
@@ -38,7 +39,7 @@ const Header = () => {
         onMouseLeave={handleMouseLeave}
         sx={{
           bgcolor: "#2e2e2e",
-          width: "20%",
+          width: { md: "20%", xs: "50%" },
           height: "45px",
           borderRadius: 5,
           justifyContent: "space-evenly",

@@ -19,7 +19,14 @@ const DevJournal = () => {
     >
       <Header />
       <Container>
-        <Box sx={{ width: "60%", m: 3, fontWeight: "bold", ml: 0 }}>
+        <Box
+          sx={{
+            width: { md: "60%", xs: "100%" },
+            m: 3,
+            fontWeight: "bold",
+            ml: 0,
+          }}
+        >
           <Typography variant="h3" sx={{ mt: 6 }}>
             Deep dives into what I've worked on, learned, and built
           </Typography>

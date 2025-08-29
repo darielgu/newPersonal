@@ -12,7 +12,7 @@ import React from "react";
 
 const ProjectCards = ({ title, content, date, path, website, tags }) => {
   return (
-    <Card sx={{ height: "650px", width: "400px" }}>
+    <Card sx={{ height: { md: "650px", xs: "800px" }, width: "400px" }}>
       <CardMedia
         image={path}
         alt={title}

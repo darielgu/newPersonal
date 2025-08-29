@@ -19,7 +19,10 @@ const Projects = () => {
     <Box sx={{ bgcolor: "#000000ff", minHeight: "100vh" }}>
       <Header />
       <Container maxWidth="lg">
-        <Typography variant="h3" sx={{ mt: 6, width: "60%", mb: 5 }}>
+        <Typography
+          variant="h3"
+          sx={{ mt: 6, width: { md: "60%", xs: "100%" }, mb: 5 }}
+        >
           Some projects I've done in my free time
         </Typography>
         <Container
@@ -31,7 +34,7 @@ const Projects = () => {
           }}
         >
           <Grid container spacing={6} columns={{ xs: 6, md: 12 }}>
-            <Grid item size={6}>
+            <Grid size={6} display="flex" justifyContent="center">
               <ProjectCards
                 title="Nova"
                 content="Nova is an AI-powered CRM layer designed to integrate and
@@ -56,7 +59,7 @@ const Projects = () => {
                 ]}
               />
             </Grid>
-            <Grid item size={6}>
+            <Grid size={6} display="flex" justifyContent="center">
               <ProjectCards
                 title="Nova Performance Dashboard"
                 content="The Nova Performance Dashboard is a real-time monitoring tool designed to track and visualize the performance of Nova’s pipeline. It displays latency trends for services such as Slack MCP, Gmail MCP, Gmail API, Personality, and Einstein, helping identify bottlenecks and measure optimization impact. The dashboard was instrumental in validating workflow improvements, including the reduction of average end-to-end latency from 210 seconds to 65 seconds after migrating from Gmail MCP to Gmail API."
