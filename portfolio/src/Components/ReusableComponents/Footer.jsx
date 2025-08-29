@@ -72,7 +72,7 @@ const Footer = () => {
               <LinkedInIcon />
             </IconButton>
             <IconButton
-              href="mailto:your.email@example.com"
+              href="mailto:darielgutierrez332@gmail.com"
               sx={{
                 color: "secondary.main",
                 "&:hover": { color: "white", transform: "translateY(-2px)" },
