@@ -23,45 +23,46 @@ const Entries = () => {
 
   return (
     <Box>
-      {entries.map((entry, index) => (
-        <Box
-          key={index}
-          onClick={() => {
-            // Handle click event
-            // Redirect to a detailed view of the entry
-            navigate("/dev-journal");
-          }}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: 2,
-            "&:hover": {
-              bgcolor: "#1e1e1e",
-              cursor: "pointer",
-            },
-            width: "80%",
-            p: 2,
-            borderRadius: 6,
-          }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {entry.createdAt.toString().split("T")[0]}
-          </Typography>
-          <Typography variant="h6" color="text.primary">
-            {entry.title}
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ whiteSpace: "pre-line" }}
+      {Array.isArray(entries) &&
+        entries?.map((entry, index) => (
+          <Box
+            key={index}
+            onClick={() => {
+              // Handle click event
+              // Redirect to a detailed view of the entry
+              navigate("/dev-journal");
+            }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              marginBottom: 2,
+              "&:hover": {
+                bgcolor: "#1e1e1e",
+                cursor: "pointer",
+              },
+              width: "80%",
+              p: 2,
+              borderRadius: 6,
+            }}
           >
-            {entry.content.slice(0, 41)}
-          </Typography>
-          <Typography variant="body2" color="#349beb">
-            Click to read
-          </Typography>
-        </Box>
-      ))}
+            <Typography variant="body1" color="text.secondary">
+              {entry.createdAt.toString().split("T")[0]}
+            </Typography>
+            <Typography variant="h6" color="text.primary">
+              {entry.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ whiteSpace: "pre-line" }}
+            >
+              {entry.content.slice(0, 41)}
+            </Typography>
+            <Typography variant="body2" color="#349beb">
+              Click to read
+            </Typography>
+          </Box>
+        ))}
     </Box>
   );
 };

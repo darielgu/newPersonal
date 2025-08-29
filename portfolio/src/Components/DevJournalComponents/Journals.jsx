@@ -50,53 +50,54 @@ const Journals = () => {
       animate={{ opacity: 1, scale: 1 }}
     >
       <Box>
-        {entries.map((entry) => (
-          <Box
-            key={entry.id}
-            id={entry.id}
-            onClick={(e) => {
-              // Handle click event
-              // Redirect to a detailed view of the entry
-              handleJournalClick(e);
-            }}
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "flex-start",
-              "&:hover": {
-                bgcolor: "#1e1e1e",
-                cursor: "pointer",
-              },
-              width: "100%",
-              p: 2,
-              borderBottom: "1px solid gray",
-              mb: 1,
-            }}
-          >
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ minWidth: 120, mr: 3 }}
+        {Array.isArray(entries) &&
+          entries?.map((entry, index) => (
+            <Box
+              key={entry.id}
+              id={entry.id}
+              onClick={(e) => {
+                // Handle click event
+                // Redirect to a detailed view of the entry
+                handleJournalClick(e);
+              }}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                "&:hover": {
+                  bgcolor: "#1e1e1e",
+                  cursor: "pointer",
+                },
+                width: "100%",
+                p: 2,
+                borderBottom: "1px solid gray",
+                mb: 1,
+              }}
             >
-              {entry.createdAt.toString().split("T")[0]}
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
-              <Typography variant="h6" color="text.primary">
-                {entry.title}
-              </Typography>
               <Typography
-                variant="body2"
+                variant="body1"
                 color="text.secondary"
-                sx={{ whiteSpace: "pre-line" }}
+                sx={{ minWidth: 120, mr: 3 }}
               >
-                {entry.content}
+                {entry.createdAt.toString().split("T")[0]}
               </Typography>
-              <Typography variant="body2" color="#349beb">
-                Click to see
-              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
+                <Typography variant="h6" color="text.primary">
+                  {entry.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ whiteSpace: "pre-line" }}
+                >
+                  {entry.content}
+                </Typography>
+                <Typography variant="body2" color="#349beb">
+                  Click to see
+                </Typography>
+              </Box>
             </Box>
-          </Box>
-        ))}
+          ))}
       </Box>
       <Dialog
         open={journalClick}
