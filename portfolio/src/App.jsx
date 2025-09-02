@@ -5,6 +5,7 @@ import Projects from "./Components/Pages/Projects";
 import CreatePost from "./Components/Pages/CreatePost";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import Resume from "./Components/Pages/Resume";
 import theme from "./theme";
 import "./index.css"; // Importing the CSS file for global styles
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/dev-journal" element={<DevJournal />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/secret" element={<CreatePost />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

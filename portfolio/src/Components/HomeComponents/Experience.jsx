@@ -2,8 +2,10 @@ import { Card, Typography, Box, Avatar, Button } from "@mui/material";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import React from "react";
 import res from "../../public/resume.png";
+import { useNavigate } from "react-router-dom";
 
 const Experience = () => {
+  const navigate = useNavigate();
   const experiences = [
     {
       position: "SWE Intern",
@@ -114,7 +116,7 @@ const Experience = () => {
           variant="outlined"
           color="primary"
           sx={{ mt: 2 }}
-          onClick={() => window.open(res, "_blank")}
+          onClick={() => navigate("/resume")}
         >
           View Resume
         </Button>
