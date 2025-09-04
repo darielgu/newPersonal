@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Avatar, Button } from "@mui/material";
+import { Card, Typography, Box, Avatar, Button, duration } from "@mui/material";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import React from "react";
 import res from "../../public/resume.png";
@@ -24,9 +24,16 @@ const Experience = () => {
     {
       position: "Research Assistant",
       company: "San Diego State University",
-      duration: "Febuary 2025 - Jun 2025",
+      duration: "Feb 2025 - Jun 2025",
       description: "Assisting in research projects related to computer science",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0kGd1e6cXlha60Ks5ZEWHqvVNthufO-xhQ&s", // Using Clearbit
+    },
+    {
+      position: "Director of Technology",
+      company: "World Computing Organization SDSU",
+      duration: "Aug 2025 - Present",
+      description: "Help run the club",
+      logo: "https://media.licdn.com/dms/image/v2/D4E0BAQHWLibSwnkGMQ/company-logo_200_200/company-logo_200_200/0/1734993524761/wcosdsu_logo?e=1759968000&v=beta&t=5G9NwiHJuCTcSr04DXfpshR8JK60Lltwr2RvNwCL8nw",
     },
   ];
 
