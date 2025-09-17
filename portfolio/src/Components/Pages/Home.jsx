@@ -9,6 +9,7 @@ import Footer from "../ReusableComponents/Footer";
 import Header from "../ReusableComponents/Header";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll } from "motion/react";
+import dariel_head from "../../public/dariel_head.jpeg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const Home = () => {
               transition={{ duration: 0.4 }}
             >
               <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQFq17E8o7NgpA/profile-displayphoto-scale_400_400/B56ZeD3mXeHQAg-/0/1750264086049?e=1757548800&v=beta&t=TyFlBLlu66m0oIhV1DjWJRxJ_OfddQ5fYSM-s5PgA7M"
+                src={dariel_head}
                 alt="Profile"
                 style={{
                   borderRadius: "50%",
